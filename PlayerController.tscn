@@ -33,11 +33,14 @@ animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
+"speed": 8.0
 } ]
 
 [node name="PlayerController" type="KinematicBody2D"]
 script = ExtResource( 13 )
+Speed = 100
+RunSpeed = 200
+Gravity = 800
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -46,4 +49,5 @@ shape = SubResource( 1 )
 frames = SubResource( 2 )
 animation = "jump"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite"]
+current = true

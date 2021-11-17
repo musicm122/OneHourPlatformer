@@ -2,8 +2,15 @@ using Godot;
 
 public class PlayerController : KinematicBody2D
 {
+
+    [Export(PropertyHint.File, "*.tscn")]
+    public string WinScene;
+
     [Export]
     public int Speed;
+
+    [Export]
+    public int RunSpeed;
 
     [Export]
     public int JumpForce = 800;
@@ -98,7 +105,7 @@ public class PlayerController : KinematicBody2D
 
         if (Input.IsActionPressed(InputConstants.Right) && isRunning)
         {
-            CurrentVelocity.x += Speed;
+            CurrentVelocity.x += RunSpeed;
         }
         else if (Input.IsActionPressed(InputConstants.Right))
         {
@@ -107,11 +114,17 @@ public class PlayerController : KinematicBody2D
 
         if (Input.IsActionPressed(InputConstants.Left) && isRunning)
         {
-            CurrentVelocity.x -= Speed;
+            CurrentVelocity.x -= RunSpeed;
         }
         else if (Input.IsActionPressed(InputConstants.Left))
         {
             CurrentVelocity.x -= Speed;
         }
+    }
+
+    public void Win()
+    {
+        GD.Print("You Win");
+        GetTree().ChangeScene(WinScene);
     }
 }

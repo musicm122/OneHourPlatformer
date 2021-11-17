@@ -1,63 +1,72 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Block.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PlayerController.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Death.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Win.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node2D"]
 position = Vector2( 69, 464 )
 
 [node name="Block" parent="." instance=ExtResource( 1 )]
-position = Vector2( 94, 35 )
+position = Vector2( 91, 35 )
+
+[node name="Block4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 371, 0 )
+scale = Vector2( 4.41527, 1.56246 )
+
+[node name="Block22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 739, 104 )
+scale = Vector2( 5.36293, 1.44841 )
 
 [node name="Block8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1115, -120 )
-
-[node name="Block10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1115, -120 )
-
-[node name="Block9" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1179, -176 )
+position = Vector2( 1171, -72 )
 
 [node name="Block11" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1243, -232 )
-
-[node name="Block12" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1243, -232 )
+position = Vector2( 1243, -176 )
 
 [node name="Block13" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1307, -288 )
+position = Vector2( 1347, -280 )
 
 [node name="Block20" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1203, -472 )
+position = Vector2( 1211, -392 )
+
+[node name="Block23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 875, -288 )
+scale = Vector2( 4.16141, 0.0742584 )
+
+[node name="Block24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1283, -672 )
+scale = Vector2( 4.16141, 0.0742584 )
 
 [node name="Block21" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1347, -472 )
 
-[node name="Block14" parent="." instance=ExtResource( 1 )]
-position = Vector2( 979, -64 )
-
-[node name="Block15" parent="." instance=ExtResource( 1 )]
-position = Vector2( 979, -64 )
-
 [node name="Block16" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1043, -120 )
 
-[node name="Block17" parent="." instance=ExtResource( 1 )]
-position = Vector2( 915, -24 )
-
 [node name="Block18" parent="." instance=ExtResource( 1 )]
-position = Vector2( 915, -24 )
+position = Vector2( 899, 0 )
 
 [node name="Block19" parent="." instance=ExtResource( 1 )]
-position = Vector2( 979, -80 )
+position = Vector2( 1051, 168 )
+
+[node name="Block25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 987, -432 )
+
+[node name="Block26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 827, -480 )
 
 [node name="Block2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 31, 35 )
 
 [node name="Block7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 554, -490 )
-scale = Vector2( 19.3064, 3.43525 )
+position = Vector2( 395, -408 )
+scale = Vector2( 8.83632, 3.95858 )
+
+[node name="Block10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 315, -984 )
+scale = Vector2( 8.83632, 3.95858 )
 
 [node name="Block5" parent="." instance=ExtResource( 1 )]
 position = Vector2( -402, -36 )
@@ -72,9 +81,9 @@ position = Vector2( -33, 34 )
 
 [node name="PlayerController" parent="." instance=ExtResource( 2 )]
 position = Vector2( 11, -55 )
-Speed = 100
+WinScene = "res://WinTitleScreen.tscn"
+RunSpeed = 250
 JumpForce = 400
-Gravity = 800
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
 position = Vector2( -21, 168 )
@@ -87,3 +96,7 @@ scale = Vector2( -46.0178, -5.1423 )
 [node name="Death3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 923, 432 )
 scale = Vector2( -46.0178, -5.1423 )
+
+[node name="Win" parent="." instance=ExtResource( 4 )]
+position = Vector2( 31, -648 )
+scale = Vector2( 4.29669, 4.41219 )
